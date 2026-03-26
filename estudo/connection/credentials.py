@@ -13,7 +13,7 @@ class Settings(BaseModel):
 
         dialect = os.getenv('DB_DIALECT')
         if not dialect:
-            return 'sqlite://.local.db'
+            return 'sqlite:///local.db'
 
         driver = os.getenv(key="DB_DRIVER")
         host = os.getenv(key="DB_HOST")
