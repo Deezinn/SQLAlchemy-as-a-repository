@@ -22,7 +22,6 @@ class Settings(BaseModel):
         user = os.getenv(key="DB_USER")
         password = os.getenv(key="DB_PASS")
 
-
         driver_part = f'+{driver}' if driver else ""
         auth_part = f'{user}:{password}@' if user and password else ""
         host_part = f'{host}:{port}' if host and port else host
