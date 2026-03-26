@@ -30,4 +30,4 @@ class Settings(BaseModel):
         return f"{dialect}{driver_part}://{auth_part}{host_part}/{name}"
 
 settings = Settings(db_url=Settings.build_db_url())
-print(settings)
+
