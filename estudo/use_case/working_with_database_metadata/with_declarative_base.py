@@ -21,7 +21,7 @@ class User(Base):
     addresses: Mapped[List["Address"]] = relationship(back_populates="user")
 
     def __repr__(self) -> str:
-        return f"User(id{self.id!r}), name={self.name!r}, fullname={self.fullname!r}"
+        return f"User(id={self.id!r}), name={self.name!r}, fullname={self.fullname!r}"
 
 class Address(Base):
     __tablename__ = "address"
@@ -34,3 +34,6 @@ class Address(Base):
 
     def __repr__(self) -> str:
         return f"Address(id={self.id!r}, email_address={self.email_address!r}"
+
+
+Base.metadata.clear()
