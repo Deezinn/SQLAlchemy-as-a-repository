@@ -1,10 +1,8 @@
-from sqlite3 import connect
-
-from sqlalchemy.orm import Session, session
+from sqlalchemy import text
+from sqlalchemy.orm import Session
 
 from estudo.connection import engine
 
-from sqlalchemy import text
 
 # with engine.connect() as conn:
 #     query = text("select 'hello world'")
@@ -44,8 +42,17 @@ from sqlalchemy import text
 #     )
 #     conn.commit()
 
-stmt = text("SELECT x, y FROM some_table WHERE y > :y ORDER BY x, y")
+# stmt = text("SELECT x, y FROM some_table WHERE y > :y ORDER BY x, y")
+# with Session(engine) as session:
+#     result = session.execute(stmt, {'y': 6})
+#     for x, y in result:
+#         print(f'x:{x}, y:{y}')
+
+
 with Session(engine) as session:
-    result = session.execute(stmt, {'y': 6})
-    for x, y in result:
-        print(f'x:{x}, y:{y}')
+    result = session.execute(
+        text("UPDATE some_table SET y=:y WHERE x=:x"),
+        [{'x': 9, "y": 11},
+         {'x': 13, "y": 15}]
+    )
+    session.commit()
