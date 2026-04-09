@@ -109,7 +109,35 @@ from sqlalchemy import and_, or_
 #         )
 #     )
 
+# with engine.connect() as conn:
+#     print(conn.execute(
+#         select(User).filter_by(name="spongebob", fullname="Spongebob squarepants")
+#     ).all())
+
+
+# print(select(User.name))
+
+# print(select(User.name, Address.email_address))
+
+# with engine.connect() as conn:
+#     print(
+#         conn.execute(select(User.name, Address.email_address).join_from(User, Address)).all()
+#     )
+
+# print(select(User.name, Address.email_address).join_from(User, Address))
+# print(select(User.name, Address.email_address).join(Address))
+# print(select(Address.email_address).select_from(User).join(Address))
+
+# from sqlalchemy import func
+
+# print(select(func.count("*")).select_from(User))
+
 with engine.connect() as conn:
-    print(conn.execute(
-        select(User).filter_by(name="spongebob", fullname="Spongebob squarepants")
-    ).all())
+
+    print(
+        conn.execute(
+            select(Address.email_address)
+            .select_from(User)
+            .join(Address, User.id == Address.id)
+        ).all()
+    )
