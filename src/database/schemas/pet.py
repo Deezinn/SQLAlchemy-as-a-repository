@@ -17,3 +17,6 @@ class PetSchema(Base):
 
     cliente_id: Mapped[int] = mapped_column(ForeignKey("clientes.id"), nullable=False)
     cliente: Mapped["ClienteSchema"] = relationship(back_populates="pets")   # type: ignore # noqa: F821
+
+
+    #
