@@ -28,4 +28,4 @@ class Credentials(BaseModel):
 
         return f'{driver_part}{auth_part}{database_part}'
 
-credentials = Credentials(url=Credentials.build_url())
+credentials = Credentials(url=Credentials.build_url()).model_dump()
