@@ -24,30 +24,6 @@ O sistema deve gerenciar:
 
 ---
 
-## 🏗️ Arquitetura do Projeto
-
-O projeto deve seguir uma separação em camadas:
-
-```
-project/
-│
-├── database/
-│   └── conexão com banco
-│
-├── models/
-│   └── definição das tabelas
-│
-├── services/
-│   └── regras de negócio
-│
-├── controllers/
-│   └── entrada via input (simulação de API)
-│
-└── main.py
-```
-
----
-
 ## 🔄 Fluxo da Aplicação
 
 1. Usuário interage via terminal (input)
@@ -332,12 +308,4 @@ Ao concluir este projeto, você deverá ser capaz de:
 
 ---
 
-## 📌 Observação
 
-Evite pular etapas. A evolução correta é o que garante aprendizado sólido.
-
-Comece simples e vá aumentando a complexidade progressivamente.
-
----
-
-🔥 Se quiser evoluir ainda mais: transforme isso em uma API real e use como projeto de portfólio.
