@@ -1,6 +1,8 @@
 from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import DeclarativeBase, MappedColumn
 
+from estudo.connection import engine
+
 class Base(DeclarativeBase):
     pass
 
@@ -38,4 +40,4 @@ class Address(Base):
 # sandy = User(name="sandy", fullname="Sandy Cheeks")
 # print(sandy)
 
-Base.metadata.clear()
+Base.metadata.create_all(engine)
