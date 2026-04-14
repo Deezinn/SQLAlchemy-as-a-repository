@@ -16,6 +16,7 @@ class Parent(Base):
     children: Mapped[List["Child"]] = relationship(back_populates="parent", cascade="all, delete-orphan", single_parent=True) # coleção de items representados pela criança (classe child)
 
 
+
 class Child(Base):
     __tablename__ = "child_table"
 
