@@ -1,11 +1,12 @@
 from sqlalchemy import insert
 from src.database.connection.engine import engine
-from src.database.schemas import PetSchema
+from schemas import ClienteSchema
 
+class ClienteRepository:
 
-class PetsRepository:
     def insert(self, context) -> None:
 
-        stmt = insert(PetSchema).values(context)
+        stmt = insert(ClienteSchema).values(context)
         with engine.begin() as conn:
             conn.execute(statement=stmt)
+
