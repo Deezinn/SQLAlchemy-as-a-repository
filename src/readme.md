@@ -120,11 +120,11 @@ Relacionamento:
 
 ## 🔗 Relacionamentos obrigatórios
 
-* 1:N → Cliente → Pets [ok]
-* 1:N → Pet → Consultas [ok]
-* 1:N → Veterinário → Consultas [ok]
-* 1:1 → Pet ↔ Prontuário [ok]
-* 1:1 → Consulta ↔ Pagamento [ok]
+* 1:N → Cliente → Pets 
+* 1:N → Pet → Consultas
+* 1:N → Veterinário → Consultas
+* 1:1 → Pet ↔ Prontuário
+* 1:1 → Consulta ↔ Pagamento
 * N:N → Pet ↔ Tratamento
 
 ---

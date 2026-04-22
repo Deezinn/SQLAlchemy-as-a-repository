@@ -1,12 +1,12 @@
-from sqlalchemy import insert
-from src.database.connection.engine import engine
-from schemas import ClienteSchema
+# from sqlalchemy import insert
+# from src.database.connection.engine import engine
+# from schemas import ClienteSchema
 
-class ClienteRepository:
+# class ClienteRepository:
 
-    def insert(self, context) -> None:
+#     def insert(self, context) -> None:
 
-        stmt = insert(ClienteSchema).values(context)
-        with engine.begin() as conn:
-            conn.execute(statement=stmt)
+#         stmt = insert(ClienteSchema).values(context)
+#         with engine.begin() as conn:
+#             conn.execute(statement=stmt)
 
