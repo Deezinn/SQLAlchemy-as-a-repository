@@ -4,9 +4,10 @@ from sqlalchemy import DateTime, ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database.models.base import Base
-from database.models.pagamentos import PagamentosModel
-from database.models.pets import PetsModel
-from database.models.veterinarios import VeterinariosModel
+
+# from database.models.pagamentos import PagamentosModel
+# from database.models.pets import PetsModel
+# from database.models.veterinarios import VeterinariosModel
 
 
 class ConsultasModel(Base):
@@ -24,9 +25,7 @@ class ConsultasModel(Base):
     veterinario_id: Mapped[int] = mapped_column(
         ForeignKey("veterinarios.id", ondelete="CASCADE"), nullable=False
     )
-    veterinario: Mapped["VeterinariosModel"] = relationship(
-        back_populates="consultas"
-    )
+    veterinario: Mapped["VeterinariosModel"] = relationship(back_populates="consultas")
 
     pagamento: Mapped["PagamentosModel"] = relationship(
         back_populates="consulta", uselist=False

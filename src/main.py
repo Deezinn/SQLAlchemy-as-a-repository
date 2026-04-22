@@ -1,6 +1,4 @@
-# from src.database.connection import engine
+from database.models.base import Base
+from database.connection import engine
 
-# from .src.repository.clientes import ClienteRepository
-# from ...schemas.base import Base
-
-# Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(engine)

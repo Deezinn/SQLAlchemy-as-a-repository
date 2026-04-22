@@ -4,7 +4,8 @@ from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database.models.base import Base
-from database.models.consultas import ConsultasModel
+
+# from database.models.consultas import ConsultasModel
 
 
 class VeterinariosModel(Base):

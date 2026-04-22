@@ -120,7 +120,7 @@ Relacionamento:
 
 ## 🔗 Relacionamentos obrigatórios
 
-* 1:N → Cliente → Pets 
+* 1:N → Cliente → Pets
 * 1:N → Pet → Consultas
 * 1:N → Veterinário → Consultas
 * 1:1 → Pet ↔ Prontuário
